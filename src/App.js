@@ -1,14 +1,24 @@
 import React from 'react'
-import TarjetaFruta from './components/TarjetaFruta/'
+import Gato from './components/Gato/'
 
 class App extends React.Component {
+    state = {
+        fuerza: 'mucha',
+        hambre: 'poca'
+    }
     render () {
+        const masDatos = {
+            color: 'negro',
+            tamaño: 'grande'
+        }
         return (
             <div>
-                <TarjetaFruta name={'Sandia'} price={5.13} />
-                <TarjetaFruta name={'Manzana'} price={7.30} />
-                <TarjetaFruta name={'Pera'} price={8.20} />
-                <TarjetaFruta name={'Papaya'} price={13.60} />
+                <Gato 
+                    name='Tomas'
+                    age='5 años'
+                    {...masDatos}
+                    {...this.state}
+                />
             </div>
         )
     }
